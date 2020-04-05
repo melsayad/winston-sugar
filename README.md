@@ -3,7 +3,7 @@
 <img alt="npm" src="https://img.shields.io/npm/v/winston-sugar">
 <img alt="NPM" src="https://img.shields.io/npm/l/winston-sugar">
 
-Syntactical sugar on to of winston, configure winston will be easy using .json configuration file.
+Syntactical sugar on top of winston, configure winston will be easy using .json configuration file.
 
 **How to use it?**
 
