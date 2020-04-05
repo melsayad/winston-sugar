@@ -1,0 +1,26 @@
+{
+  "name": "winston-sugar",
+  "version": "1.0.0",
+  "description": "Syntactical sugar on to of winston, configure winston will be easy using .json configuration file",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "winston",
+    "js log",
+    "logger",
+    "js logger",
+    "javaScript logger",
+    "configuration",
+    "javascript",
+    "nodejs",
+    "node"
+  ],
+  "author": "Mohamed El Sayad",
+  "homepage": "http://www.thoth.me",
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {
+    "winston": "~3.2.1"
+  }
+}

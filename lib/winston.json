@@ -1,0 +1,134 @@
+{
+  "level": "trace",
+  "silent": false,
+  "exitOnError": false,
+  "levels": {
+    "values": {
+      "trace": 6,
+      "debug": 5,
+      "info": 4,
+      "warn": 3,
+      "error": 2,
+      "fatal": 1,
+      "mark": 0
+    },
+    "names": {
+      "trace": "trace",
+      "debug": "debug",
+      "info": "info",
+      "warn": "warn",
+      "error": "error",
+      "fatal": "fatal",
+      "mark": "mark"
+    },
+    "colors": {
+      "trace": "blue",
+      "debug": "cyan",
+      "info": "green",
+      "warn": "yellow",
+      "error": "red",
+      "fatal": "magenta",
+      "mark": "grey"
+    }
+  },
+  "format": [
+    {
+      "type": "timestamp",
+      "options": {
+        "format": "YYYY-MM-DDThh:mm:ss.SSS"
+      }
+    },
+    {
+      "type": "printf",
+      "options": {
+        "template": "log4js"
+      }
+    }
+  ],
+  "transports": [
+    {
+      "type": "Console",
+      "name": "dev-logger",
+      "env": "development",
+      "options": {
+        "stderrLevels ": [
+          "fatal",
+          "error"
+        ],
+        "consoleWarnLevels": [
+          "debug",
+          "warn"
+        ],
+        "handleExceptions": true,
+        "format": [
+          {
+            "type": "printf",
+            "options": {
+              "template": "log4js-colored"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "File",
+      "name": "info-logger",
+      "env": "production",
+      "options": {
+        "filename": "log/app.log",
+        "maxsize": "100m",
+        "maxFiles": 3,
+        "tailable": true,
+        "maxRetries": 3,
+        "zippedArchive": true,
+        "handleExceptions": true,
+        "filters": [
+          "info",
+          "mark"
+        ]
+      }
+    },
+    {
+      "type": "File",
+      "name": "warn-logger",
+      "env": "production",
+      "options": {
+        "filename": "log/warns.log",
+        "maxsize": "100m",
+        "maxFiles": 3,
+        "tailable": true,
+        "maxRetries": 3,
+        "zippedArchive": true,
+        "handleExceptions": true,
+        "filters": [
+          "warn"
+        ]
+      }
+    },
+    {
+      "type": "File",
+      "name": "error-logger",
+      "env": "production",
+      "options": {
+        "filename": "log/fatal.log",
+        "maxsize": "100m",
+        "maxFiles": 3,
+        "tailable": true,
+        "maxRetries": 3,
+        "zippedArchive": true,
+        "handleExceptions": true,
+        "filters": [
+          "error",
+          "fatal"
+        ]
+      }
+    }
+  ],
+  "printf": {
+    "templates": {
+      "log4js": "(({level, message, category, timestamp})=> { return `[${timestamp}] [${level}] ${(category)?category:'winston'} - ${message}`;})",
+      "log4js-colored": "(({level, message, category, timestamp})=> { return winston.format.colorize({all:true}).colorize(level,`[${timestamp}] [${level.toUpperCase()}] ${(category)?category:'winston'}`) + ` - ${message}`;})",
+      "custom-all": "((info) => {let message = `${new Date(Date.now()).toUTCString()} | ${info.level.toUpperCase()} | ${info.message} | `; message = info.obj ? message + `data:${JSON.stringify(info.obj)} | ` : message; message = this.log_data ? message + `log_data:${JSON.stringify(this.log_data)} | ` : message; return message;})"
+    }
+  }
+}
