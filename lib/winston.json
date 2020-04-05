@@ -12,15 +12,6 @@
       "fatal": 1,
       "mark": 0
     },
-    "names": {
-      "trace": "trace",
-      "debug": "debug",
-      "info": "info",
-      "warn": "warn",
-      "error": "error",
-      "fatal": "fatal",
-      "mark": "mark"
-    },
     "colors": {
       "trace": "blue",
       "debug": "cyan",

@@ -18,8 +18,8 @@
   ],
   "author": "Mohamed El Sayad",
   "homepage": "http://www.thoth.me",
-  "license": "ISC",
-  "main": "index.js",
+  "license": "MIT",
+  "main": "logger-loader.js",
   "dependencies": {
     "winston": "~3.2.1"
   }
