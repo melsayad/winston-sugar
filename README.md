@@ -1,4 +1,8 @@
 # **"# winston-sugar"**
+
+<img alt="npm" src="https://img.shields.io/npm/v/winston-sugar">
+<img alt="NPM" src="https://img.shields.io/npm/l/winston-sugar">
+
 Syntactical sugar on to of winston, configure winston will be easy using .json configuration file.
 
 **How to use it?**
@@ -18,7 +22,7 @@ log.info("It's me winson-sugar :) ");
 ```
 **Dependances**
 
-winston@3.2.0
+winston@3.2.1
 
 **.JOSN configurations file template**
 ```
