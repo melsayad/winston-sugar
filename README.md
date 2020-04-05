@@ -1,4 +1,4 @@
-# **"# winston-sugar"**
+# **winston-sugar**
 
 <img alt="npm" src="https://img.shields.io/npm/v/winston-sugar">
 <img alt="NPM" src="https://img.shields.io/npm/l/winston-sugar">
