@@ -19,7 +19,7 @@
   "author": "Mohamed El Sayad",
   "homepage": "https://github.com/melsayad/winston-sugar",
   "license": "MIT",
-  "main": "logger-loader.js",
+  "main": "./lib/logger-loader.js",
   "dependencies": {
     "winston": "~3.2.1"
   }
