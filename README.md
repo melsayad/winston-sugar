@@ -9,13 +9,13 @@ Syntactical sugar on top of winston, configure winston will be easy using .json 
 
 ```
 // Import winson-sugar when you need to have a winston instance
-const loggerLoader = require('winston-sugar');
+const winstonLoader = require('winston-sugar');
 
 // This should be called in the application entry point only.
-loggerLoader.config('./<path>/winston.json');
+winstonLoader.config('./<path>/winston.json');
 
 // Get winston logger
-const log = loggerLoader.getLogger('app');
+const log = winstonLoader.getLogger('app');
 
 // Enjoy and log using winston
 log.info("It's me winson-sugar :) "); 
