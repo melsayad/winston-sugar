@@ -17,7 +17,7 @@
     "node"
   ],
   "author": "Mohamed El Sayad",
-  "homepage": "http://www.thoth.me",
+  "homepage": "https://github.com/melsayad/winston-sugar",
   "license": "MIT",
   "main": "logger-loader.js",
   "dependencies": {
