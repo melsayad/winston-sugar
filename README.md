@@ -3,9 +3,15 @@
 <img alt="npm" src="https://img.shields.io/npm/v/winston-sugar">
 <img alt="NPM" src="https://img.shields.io/npm/l/winston-sugar">
 
-Syntactical sugar on top of winston, configuring winston will be easy using .json configuration file.
+Syntactical sugar on top of `winston`, configuring winston will be easy using .json configuration file.
 
 Special thanks for all of `winston` team for the great logger.
+
+**Installation**
+
+Use **npm** command  - `npm i winston-sugar`
+
+`winston-sugar` will create a folder name `config` if not exist and add `winston.json` file template.
 
 **How to use it?**
 
@@ -100,7 +106,7 @@ ex. Adding two winston.format functions, winston-sugar will combine all format f
     {
       "type": "printf", 
       "options": {
-        "template": "custom" // the name of the custom template, you will find it in the printf section
+        "template": "custom" // the name of the custom template.
       }
     }
   ]
@@ -130,11 +136,11 @@ ex. Adding 3 types of transports, one is type of Console for development, and th
           "warn"
         ],
         "handleExceptions": true,
-        "format": [ // Override the deafult logging format for this Console transport
+        "format": [ // Override the deafult logging format.
           {
             "type": "printf",
             "options": {
-              "template": "custom-colored" // the name of the custom template, you will find it in the printf section
+              "template": "custom-colored" // the name of the custom template.
             }
           }
         ]
@@ -152,9 +158,9 @@ ex. Adding 3 types of transports, one is type of Console for development, and th
         "maxRetries": 3,
         "zippedArchive": true,
         "handleExceptions": true,
-        "filters": [ // Override the logging level in order to log level info and mark only.
-          "info",
-          "mark"
+        "filters": [ // Override the logging level.
+          "info",    // log level info and mark only.
+          "mark"     
         ]
       }
     },
@@ -170,8 +176,8 @@ ex. Adding 3 types of transports, one is type of Console for development, and th
         "maxRetries": 3,
         "zippedArchive": true,
         "handleExceptions": true,
-        "filters": [  // Override the logging level in order to log level error and fatal only.
-          "error",
+        "filters": [  // Override the logging level.
+          "error",    // log level error and fatal only.
           "fatal"
         ]
       }
@@ -195,120 +201,9 @@ ex. Three callback funcation templates
   }
 ```
 
-**A sample of .json configurations file**
+**Configurations .json file template**
 
-- Copy the following rich json format sample and save it in a .jason file, re-configure .jason file based on your needs. Enjoy logging using `winston-sugar`.
-```
-{
-  "level": "trace",
-  "silent": false,
-  "exitOnError": false,
-  "levels": {
-    "values": {
-      "trace": 6,
-      "debug": 5,
-      "info": 4,
-      "warn": 3,
-      "error": 2,
-      "fatal": 1,
-      "mark": 0
-    },
-    "colors": {
-      "trace": "blue",
-      "debug": "cyan",
-      "info": "green",
-      "warn": "yellow",
-      "error": "red",
-      "fatal": "magenta",
-      "mark": "grey"
-    }
-  },
-  "format": [
-    {
-      "type": "timestamp",
-      "options": {
-        "format": "YYYY-MM-DDThh:mm:ss.SSS"
-      }
-    },
-    {
-      "type": "printf",
-      "options": {
-        "template": "custom"
-      }
-    }
-  ],
-  "transports": [
-    {
-      "type": "Console",
-      "name": "dev-logger",
-      "env": "development",
-      "options": {
-        "stderrLevels ": [
-          "fatal",
-          "error"
-        ],
-        "consoleWarnLevels": [
-          "debug",
-          "warn"
-        ],
-        "handleExceptions": true,
-        "format": [
-          {
-            "type": "printf",
-            "options": {
-              "template": "custom-colored"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "type": "File",
-      "name": "info-logger",
-      "env": "production",
-      "options": {
-        "filename": "log/app.log",
-        "maxsize": "100m",
-        "maxFiles": 3,
-        "tailable": true,
-        "maxRetries": 3,
-        "zippedArchive": true,
-        "handleExceptions": true,
-        "filters": [
-          "info",
-          "mark"
-        ]
-      }
-    },
-    {
-      "type": "File",
-      "name": "error-logger",
-      "env": "production",
-      "options": {
-        "filename": "log/fatal.log",
-        "maxsize": "100m",
-        "maxFiles": 3,
-        "tailable": true,
-        "maxRetries": 3,
-        "zippedArchive": true,
-        "handleExceptions": true,
-        "filters": [
-          "error",
-          "fatal"
-        ]
-      }
-    }
-  ],
-  "printf": {
-    "templates": {
-      "custom": "(({level, message, category, timestamp})=> { return `[${timestamp}] [${level}] ${(category)?category:'winston'} - ${message}`;})",
-      "custom-colored": "(({level, message, category, timestamp})=> { return winston.format.colorize({all:true}).colorize(level,`[${timestamp}] [${level.toUpperCase()}] ${(category)?category:'winston'}`) + ` - ${message}`;})",
-      "custom-all": "((info) => {let message = `${new Date(Date.now()).toUTCString()} | ${info.level.toUpperCase()} | ${info.message} | `; message = info.obj ? message + `data:${JSON.stringify(info.obj)} | ` : message; message = this.log_data ? message + `log_data:${JSON.stringify(this.log_data)} | ` : message; return message;})"
-    }
-  }
-}
-```
- 
+- Please check the `winston.json` under `config` directory.
 
 
 **Licenses**

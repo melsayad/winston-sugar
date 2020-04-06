@@ -1,22 +1,28 @@
 {
   "name": "winston-sugar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Syntactical sugar on to of winston, configure winston will be easy using .json configuration file",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "./lib/scripts/install.js",
+    "postinstall": "./lib/scripts/install.js"
   },
   "keywords": [
     "winston",
-    "js log",
+    "conf",
+    "config",
+    "configuration",
+    "winston-config",
+    "js-log",
     "logger",
-    "js logger",
-    "javaScript logger",
+    "js-logger",
+    "javaScript-logger",
     "configuration",
     "javascript",
     "nodejs",
     "node"
   ],
-  "author": "Mohamed El Sayad",
+  "author": "Mohamed El Sayad (m.elsayad@thoth.me)",
   "homepage": "https://github.com/melsayad/winston-sugar",
   "license": "MIT",
   "main": "./lib/logger-loader.js",
