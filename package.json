@@ -1,6 +1,6 @@
 {
   "name": "winston-sugar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Syntactical sugar on to of winston, configure winston will be easy using .json configuration file",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
