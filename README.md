@@ -34,7 +34,7 @@ example:
 const winstonLoader = require('winston-sugar');
 
 // This should be called in the application entry point only.
-winstonLoader.config('./<path>/winston.json');
+winstonLoader.config('../config/winston.json');
 
 // Get winston logger
 const log = winstonLoader.getLogger('app');
