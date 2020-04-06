@@ -1,11 +1,10 @@
 {
   "name": "winston-sugar",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Syntactical sugar on to of winston, configure winston will be easy using .json configuration file",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "./lib/scripts/install.js",
-    "postinstall": "./lib/scripts/install.js"
+    "install": "./lib/scripts/install.js"
   },
   "keywords": [
     "winston",
