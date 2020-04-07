@@ -5,7 +5,7 @@
 
 Syntactical sugar on top of `winston`, configuring winston will be easy using .json configuration file.
 
-Special thanks for all of `winston` team for the great logger.
+Special thanks to all of `winston` team for the great logger.
 
 **Installation**
 
@@ -15,7 +15,7 @@ Use **npm** command  - `npm i winston-sugar`
 
 **How to use it?**
 
-- Build you .json configurations file (rich example here-under).
+- Build your .json configurations file (rich example here-under).
 - Require `winston-sugar` to get a class `WinstonLoader` instance.
 - Load your winston logger configurations by passing the .json path to the `config` function.
 - Get your winston logger by calling `getLogger` function, you can add `category` as string parameter if you need to have a child logger for a specific module.
