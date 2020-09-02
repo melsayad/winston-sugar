@@ -15,10 +15,20 @@ Use **npm** command  - `npm i winston-sugar`
 
 **How to use it?**
 
+TL;DR
+Add the following lines, then continue use console.log as usual.
+`const winstonLoader = require('winston-sugar');`
+`winstonLoader.config('./config/winston.json');`
+`const log = winstonLoader.getLogger(path.basename(process.argv[1], '.js'));`
+`winstonLoader.replaceConsole(log);`
+
+Full version
+
 - Build your .json configurations file (rich example here-under).
 - Require `winston-sugar` to get a class `WinstonLoader` instance.
 - Load your winston logger configurations by passing the .json path to the `config` function.
 - Get your winston logger by calling `getLogger` function, you can add `category` as string parameter if you need to have a child logger for a specific module.
+- If you already have alot of console.log, console.error etc. in your code you can use `winstonLoader.replaceConsole(log)` to move them to winston instead;
 
 **note:** you need to call `config` only one time from the entry point of your application. 
 
